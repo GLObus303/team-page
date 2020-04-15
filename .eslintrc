@@ -1,0 +1,25 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+
+  "plugins": ["@typescript-eslint", "react", "import", "react-hooks"],
+  "rules": {
+    "no-else-return": 1,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "react/prop-types": 0,
+    "import/no-unresolved": 0,
+    "react/display-name": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
