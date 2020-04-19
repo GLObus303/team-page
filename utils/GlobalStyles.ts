@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -63,5 +63,3 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.5px;
   }
 `
-
-export default GlobalStyle
