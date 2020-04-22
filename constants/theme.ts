@@ -13,7 +13,8 @@ export const FONT_SIZE = {
   SMALL: '1.4rem',
   BASE: '1.5rem',
   MEDIUM: '1.8rem',
-  LARGE: '2.4rem',
+  LARGE: '2.2rem',
+  HEADING: '6rem',
 }
 
 export const FONT_WEIGHT = {
@@ -23,18 +24,15 @@ export const FONT_WEIGHT = {
 }
 
 export const BREAKPOINT: { [key: string]: number } = {
+  SMALL_MOBILE: 374,
   MOBILE: 480,
-  TABLET: 768,
-  DESKTOP: 1280,
-}
-
-export const SCREEN = {
-  ABOVE_MOBILE: `@media (min-width: ${BREAKPOINT.MOBIlE}px)`,
-  ABOVE_TABLET: `@media (min-width: ${BREAKPOINT.TABLET}px) `,
-  ABOVE_DESKTOP: `@media (min-width: ${BREAKPOINT.DESKTOP}px) `,
+  TABLET: 1024,
+  NOTEBOOK: 1366,
 }
 
 export const Z_INDEX = {
   FRONT: 1,
   BACK: 0,
 }
+
+export const MAX_CONTENT_WIDTH = '1940px'

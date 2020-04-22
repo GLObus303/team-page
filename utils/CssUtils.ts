@@ -10,9 +10,10 @@ const mediaQuery = (name: string) => (
   }
 `
 
-export const desktop = mediaQuery('DESKTOP')
+export const notebook = mediaQuery('NOTEBOOK')
 export const tablet = mediaQuery('TABLET')
 export const mobile = mediaQuery('MOBILE')
+export const smallMobile = mediaQuery('SMALL_MOBILE')
 
 export const prop = (targetProp: string) => (props: {
   [key: string]: string

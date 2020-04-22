@@ -10,6 +10,9 @@ const Container = styled.div`
   align-items: center;
   padding: 30px;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   ${mobile`
     display: flex;

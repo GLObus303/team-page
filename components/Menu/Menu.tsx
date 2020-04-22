@@ -6,7 +6,7 @@ import { Nav } from 'components/Menu/Nav'
 import { tablet, mobile } from 'utils/CssUtils'
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;

@@ -4,10 +4,12 @@ import styled from 'styled-components'
 
 import { Menu } from 'components/Menu/Menu'
 import { MobileHeader } from 'components/MobileHeader'
+import { MAX_CONTENT_WIDTH } from 'constants/theme'
 
 const PageWrapper = styled.div`
   display: flex;
   min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   overflow-x: hidden;
   position: relative;
@@ -16,6 +18,12 @@ const PageWrapper = styled.div`
 const ContentWrapper = styled.div`
   flex: 1 0 auto;
   width: 100%;
+  height: 100%;
+  max-width: ${MAX_CONTENT_WIDTH};
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 `
 
 interface LayoutProps {
@@ -36,9 +44,9 @@ export const Layout: FC<LayoutProps> = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <PageWrapper>
+      <ContentWrapper>{children}</ContentWrapper>
       <MobileHeader />
       <Menu />
-      <ContentWrapper>{children}</ContentWrapper>
     </PageWrapper>
   </>
 )
