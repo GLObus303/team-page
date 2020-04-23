@@ -1,10 +1,12 @@
+import { TRANSITION, COLORS } from 'constants/theme'
+
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { TRANSITION, COLORS } from 'constants/theme'
 import { HoverButton } from 'components/HoverButton'
 import { mobile } from 'utils/CssUtils'
-import { BurgerMenu } from './BurgerMenu'
 import { Nav } from 'components/Menu/Nav'
+
+import { BurgerMenu } from './BurgerMenu'
 
 const Container = styled.div`
   display: none;
@@ -36,7 +38,7 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
 export const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleOpenChange = () => setIsOpen((isOpen) => !isOpen)
+  const handleOpenChange = () => setIsOpen((prevIsOpen) => !prevIsOpen)
 
   return (
     <Container>

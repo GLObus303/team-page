@@ -27,12 +27,12 @@ export const BREAKPOINT: { [key: string]: number } = {
   SMALL_MOBILE: 374,
   MOBILE: 480,
   TABLET: 1024,
-  NOTEBOOK: 1366,
+  LAPTOP: 1366,
 }
 
 export const Z_INDEX = {
   FRONT: 1,
-  BACK: 0,
+  BASE_LEVEL: 0,
 }
 
 export const MAX_CONTENT_WIDTH = '1940px'

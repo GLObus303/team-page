@@ -1,6 +1,7 @@
+import { COLORS } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS } from 'constants/theme'
 
 const StyledButton = styled.button<{
   isInverted?: boolean

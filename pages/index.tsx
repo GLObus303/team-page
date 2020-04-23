@@ -4,7 +4,6 @@ import { Layout } from 'components/Layout'
 import { Heading } from 'components/Heading'
 import { Button } from 'components/Button'
 import { Text } from 'components/Text'
-
 import { tablet, mobile } from 'utils/CssUtils'
 
 const Container = styled.div`

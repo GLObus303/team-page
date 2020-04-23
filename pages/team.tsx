@@ -1,13 +1,14 @@
+import { Z_INDEX, COLORS } from 'constants/theme'
+import { Hexagon } from 'constants/hexagon'
+import { TEAM } from 'constants/teamData'
+
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import { TeamCard } from 'components/TeamCard'
 import { Layout } from 'components/Layout'
 import { HoverButton } from 'components/HoverButton'
-import { mobile, tablet, smallMobile, notebook } from 'utils/CssUtils'
-import { Z_INDEX, COLORS } from 'constants/theme'
-import { Hexagon } from 'constants/hexagon'
-import { TEAM } from 'constants/teamData'
+import { mobile, tablet, smallMobile, laptop } from 'utils/CssUtils'
 
 const Container = styled.div`
   margin-left: 130px;
@@ -35,7 +36,7 @@ const ButtonContainer = styled.div`
 
   ${tablet`
     display: none;
-  `}
+  `};
 `
 
 const HoverButtonLeft = styled(HoverButton)`
@@ -54,8 +55,9 @@ const CustomSlider = styled(Slider)`
     left: 50%;
     transform: translateX(-50%);
     display: flex !important;
+    z-index: ${Z_INDEX.FRONT};
 
-    ${notebook`
+    ${laptop`
       bottom: 60px;
     `}
 
@@ -70,6 +72,7 @@ const CustomSlider = styled(Slider)`
     ${smallMobile`
       bottom: 50px;
     `}
+
 
     li {
       list-style: none;
@@ -92,7 +95,7 @@ const CustomSlider = styled(Slider)`
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
         background: ${COLORS.BLACK};
-        z-index: ${Z_INDEX.BACK};
+        z-index: ${Z_INDEX.BASE_LEVEL};
         clip-path: ${Hexagon};
 
         ${mobile`
@@ -113,6 +116,7 @@ const CustomDot = styled.div<{ background: string }>`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  cursor: pointer;
 
   ${mobile`
     width: 50px;
@@ -128,16 +132,6 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   customPaging: (index) => <CustomDot background={TEAM[index].image} />,
-}
-
-export interface TeamCardProps {
-  firstName: string
-  lastName: string
-  position: string
-  description: string
-  techs: string[]
-  image: string
-  linkedIn: string
 }
 
 const Team = () => {

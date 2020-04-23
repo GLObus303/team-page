@@ -1,7 +1,8 @@
+import { COLORS, FONT_SIZE } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
 import { prop, tablet, mobile, smallMobile } from 'utils/CssUtils'
-import { COLORS, FONT_SIZE } from 'constants/theme'
 
 const StyledHeading = styled.h1`
   color: ${prop('color') || COLORS.BLACK};

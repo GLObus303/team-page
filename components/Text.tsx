@@ -1,7 +1,8 @@
+import { COLORS, FONT_SIZE } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
 import { prop, smallMobile } from 'utils/CssUtils'
-import { COLORS, FONT_SIZE } from 'constants/theme'
 
 const StyledText = styled.p`
   color: ${prop('color') || COLORS.BLACK};

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
 import { BREAKPOINT } from 'constants/theme'
+
+import { useEffect, useState } from 'react'
 
 const useDeviceType = () => {
   const [isTablet, setIsTablet] = useState<boolean | undefined>(undefined)

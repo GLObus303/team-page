@@ -1,8 +1,10 @@
+import { COLORS, TRANSITION } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from 'components/Icon'
-import { COLORS, TRANSITION } from 'constants/theme'
 import { mobile } from 'utils/CssUtils'
+import Link from 'next/link'
 
 const Content = styled.div`
   white-space: nowrap;
@@ -111,14 +113,16 @@ export const HoverButton: React.FC<HoverButtonProps> = ({
   onClick,
   content,
 }) => (
-  <Container href={link} className={className}>
-    <Button onClick={onClick}>
-      <Icon type={icon} />
-    </Button>
-    {content && (
-      <ContentWrapper>
-        <Content>{content}</Content>
-      </ContentWrapper>
-    )}
-  </Container>
+  <Link href={link || ''}>
+    <Container className={className}>
+      <Button onClick={onClick}>
+        <Icon type={icon} />
+      </Button>
+      {content && (
+        <ContentWrapper>
+          <Content>{content}</Content>
+        </ContentWrapper>
+      )}
+    </Container>
+  </Link>
 )

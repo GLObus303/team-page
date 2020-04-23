@@ -1,9 +1,12 @@
+import { COLORS } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS } from 'constants/theme'
 import { mobile } from 'utils/CssUtils'
-import { Contacts } from './Contacts'
 import { useRouter } from 'next/dist/client/router'
+import Link from 'next/link'
+
+import { Contacts } from './Contacts'
 
 const NavList = styled.ul`
   display: flex;
@@ -70,7 +73,9 @@ export const Nav = () => {
     <NavList>
       <NavItem active={route === '/contact'}>Contact</NavItem>
       <NavItem active={route === '/team'}>
-        <a href="/team">Team</a>
+        <Link href="/team">
+          <a>Team</a>
+        </Link>
       </NavItem>
       <NavItem active={route === '/technologies'}>Technologies</NavItem>
       <MobileContacts />

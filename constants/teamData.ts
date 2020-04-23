@@ -1,4 +1,4 @@
-import { TeamCardProps } from 'pages/team'
+import { TeamCardProps } from 'components/TeamCard'
 
 export const TEAM: TeamCardProps[] = [
   {

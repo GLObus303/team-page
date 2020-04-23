@@ -1,6 +1,7 @@
+import { COLORS, Z_INDEX, TRANSITION } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS, Z_INDEX, TRANSITION } from 'constants/theme'
 
 const Container = styled.div`
   z-index: ${Z_INDEX.FRONT};

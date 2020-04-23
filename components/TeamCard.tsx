@@ -1,13 +1,13 @@
+import { FONT_SIZE } from 'constants/theme'
+import { Hexagon } from 'constants/hexagon'
+
 import React from 'react'
 import styled from 'styled-components'
 import { Heading } from 'components/Heading'
 import { Text } from 'components/Text'
 import { Techs } from 'components/Techs'
-import { TeamCardProps } from 'pages/team'
-import { tablet, mobile, smallMobile, notebook } from 'utils/CssUtils'
+import { tablet, mobile, smallMobile, laptop } from 'utils/CssUtils'
 import useDeviceType from 'utils/useDeviceType'
-import { FONT_SIZE } from 'constants/theme'
-import { Hexagon } from 'constants/hexagon'
 
 const Container = styled.div`
   height: 100vh;
@@ -46,24 +46,29 @@ const Info = styled.div`
 `
 
 const Picture = styled.div<{ background: string }>`
-  width: 50%;
-  height: 75%;
+  width: 530px;
+  height: 475px;
   clip-path: ${Hexagon};
   background-image: ${({ background }) => `url(${background})`};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 
+  ${laptop`
+    width: 350px;
+    height: 350px;
+  `}
+
   ${tablet`
     order: -1;
-    width: 80%;
-    height: 42%;
+    width: 150px;
+    height: 150px;
     margin-top: 50px;
   `}
 
   ${mobile`
-    width: 42vw;
-    height: 40vw;
+    width: 150px;
+    height: 150px;
     margin-top: 60px;
   `}
 
@@ -110,7 +115,7 @@ const Wrapper = styled.div`
 `
 
 const CustomText = styled(Text)`
-  ${notebook`
+  ${laptop`
     font-size: ${FONT_SIZE.MEDIUM};
     line-height: 2rem;
   `}
@@ -120,6 +125,16 @@ const CustomText = styled(Text)`
       line-height: 1.4rem;
   `}
 `
+
+export interface TeamCardProps {
+  firstName: string
+  lastName: string
+  position: string
+  description: string
+  techs: string[]
+  image: string
+  linkedIn: string
+}
 
 export const TeamCard: React.FC<TeamCardProps> = ({
   firstName,

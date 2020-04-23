@@ -1,6 +1,7 @@
+import { COLORS } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS } from 'constants/theme'
 import { HoverButton } from 'components/HoverButton'
 import { Nav } from 'components/Menu/Nav'
 import { Contacts } from 'components/Menu/Contacts'

@@ -1,10 +1,10 @@
+import { MAX_CONTENT_WIDTH } from 'constants/theme'
+
 import React, { FC, ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
-
 import { Menu } from 'components/Menu/Menu'
 import { MobileHeader } from 'components/Menu/MobileHeader'
-import { MAX_CONTENT_WIDTH } from 'constants/theme'
 
 const PageWrapper = styled.div`
   display: flex;

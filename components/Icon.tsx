@@ -1,10 +1,11 @@
+import { COLORS, Z_INDEX } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
 import Mail from 'public/icons/mail.svg'
 import Phone from 'public/icons/phone.svg'
 import Arrow from 'public/icons/arrow.svg'
 import LightBulb from 'public/icons/light-bulb.svg'
-import { COLORS, Z_INDEX } from 'constants/theme'
 
 const StyledSVG = styled.span<{ width?: string; color?: string }>`
   display: inline-flex;
