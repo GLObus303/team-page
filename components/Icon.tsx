@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Mail from 'public/icons/mail.svg'
 import Phone from 'public/icons/phone.svg'
+import Arrow from 'public/icons/arrow.svg'
 import LightBulb from 'public/icons/light-bulb.svg'
 import { COLORS, Z_INDEX } from 'constants/theme'
 
@@ -27,6 +28,7 @@ const Icons: { [key: string]: React.ReactNode } = {
   mail: <Mail />,
   phone: <Phone />,
   'light-bulb': <LightBulb />,
+  arrow: <Arrow />,
 }
 
 export const Icon: React.FC<IconProps> = ({ type, width, color }) => (

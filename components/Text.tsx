@@ -11,13 +11,28 @@ const StyledText = styled.p`
   font-size: ${({ size }) => FONT_SIZE[size] ?? FONT_SIZE.LARGE};
   text-align: ${prop('align')};
   line-height: 3rem;
+  margin: ${prop('margin')};
 
   ${smallMobile`
-      font-size: ${FONT_SIZE.BASE};
-      line-height: 1.8rem;
-    `}
+    font-size: ${FONT_SIZE.BASE};
+    line-height: 1.8rem;
+  `}
 `
 
-export const Text = ({ children, ...props }) => (
-  <StyledText {...props}>{children}</StyledText>
+interface TextProps {
+  margin?: string
+  size?: string
+  color?: string
+  children: string
+}
+
+export const Text: React.FC<TextProps> = ({
+  children,
+  margin,
+  color,
+  size,
+}) => (
+  <StyledText margin={margin} color={color} size={size}>
+    {children}
+  </StyledText>
 )

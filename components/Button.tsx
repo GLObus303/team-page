@@ -11,7 +11,7 @@ const StyledButton = styled.button<{
   border-radius: 16px;
   color: ${({ isInverted }) => (isInverted ? COLORS.BLACK : COLORS.WHITE)};
   cursor: pointer;
-  font-size: 24px;
+  font-size: 2.4rem;
   padding: 16px 60px;
   min-width: 150px;
   margin: ${({ centered }) => (centered ? '0 auto' : 0)};

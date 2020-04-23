@@ -26,14 +26,6 @@ const Container = styled.div`
     `}
 `
 
-const StyledHeading = styled(Heading)`
-  margin-bottom: 24px;
-`
-
-const StyledText = styled(Text)`
-  margin-bottom: 24px;
-`
-
 const StyledButton = styled(Button)`
   ${mobile`
     display: none;
@@ -107,7 +99,7 @@ const Image = styled.div`
   ${mobile`
     margin: auto auto 0;
     transform: translateY(10%) translateX(0);
-    background-position: 55% 20%;
+    background-position: 55% 32%;
     height: 70vw;
     max-height: 35vh;
     width: 80%;
@@ -118,11 +110,11 @@ const Home = () => (
   <Layout>
     <Image />
     <Container>
-      <StyledHeading>Hire us you dumb abc cunts</StyledHeading>
-      <StyledText>
+      <Heading margin="0 0 24px 0">Hire us you dumb abc cunts</Heading>
+      <Text margin="0 0 24px 0">
         You pay us good.. 6k per mday and tragic 3k for Nick cos he is a cheap
         ass fuck
-      </StyledText>
+      </Text>
       <StyledButton>Hire us</StyledButton>
     </Container>
   </Layout>

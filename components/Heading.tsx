@@ -9,6 +9,7 @@ const StyledHeading = styled.h1`
   font-size: ${FONT_SIZE.HEADING};
   line-height: 6rem;
   text-align: left;
+  margin: ${prop('margin')};
 
   ${tablet`
       font-size: 5rem;
@@ -25,7 +26,18 @@ const StyledHeading = styled.h1`
     `}
 `
 
-export const Heading: React.FC<{ color?: string; children: string }> = ({
+interface HeadingProps {
+  color?: string
+  margin?: string
+  children: string
+}
+
+export const Heading: React.FC<HeadingProps> = ({
   children,
   color,
-}) => <StyledHeading color={color}>{children}</StyledHeading>
+  margin,
+}) => (
+  <StyledHeading color={color} margin={margin}>
+    {children}
+  </StyledHeading>
+)

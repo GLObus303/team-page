@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 
 import { Menu } from 'components/Menu/Menu'
-import { MobileHeader } from 'components/MobileHeader'
+import { MobileHeader } from 'components/Menu/MobileHeader'
 import { MAX_CONTENT_WIDTH } from 'constants/theme'
 
 const PageWrapper = styled.div`
@@ -20,6 +20,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   max-width: ${MAX_CONTENT_WIDTH};
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;

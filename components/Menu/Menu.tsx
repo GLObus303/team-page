@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { COLORS } from 'constants/theme'
 import { HoverButton } from 'components/HoverButton'
 import { Nav } from 'components/Menu/Nav'
+import { Contacts } from 'components/Menu/Contacts'
 import { tablet, mobile } from 'utils/CssUtils'
 
 const Container = styled.div`
@@ -26,19 +27,8 @@ const Container = styled.div`
     top: 100%;
     transform: translateY(-100%);
     width: 100%;  
-    height: 100px;
-    `}
-`
-
-const ContactContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  height: 130px;
-
-  ${mobile`
-      display: none;
+    height: 60px;
+    display: none;
     `}
 `
 
@@ -50,11 +40,8 @@ const StyledHoverButton = styled(HoverButton)`
 
 export const Menu = () => (
   <Container>
-    <StyledHoverButton icon="light-bulb" />
+    <StyledHoverButton icon="light-bulb" link="/" content="Dream Team" />
     <Nav />
-    <ContactContainer>
-      <HoverButton icon="phone" />
-      <HoverButton icon="mail" />
-    </ContactContainer>
+    <Contacts />
   </Container>
 )

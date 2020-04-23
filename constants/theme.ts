@@ -36,3 +36,9 @@ export const Z_INDEX = {
 }
 
 export const MAX_CONTENT_WIDTH = '1940px'
+
+export const TRANSITION = {
+  CUBIC: 'cubic-bezier(0.77, 0.2, 0.05, 1)',
+  LINEAR: 'linear',
+  EASE_IN: 'ease-in',
+}
