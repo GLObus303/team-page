@@ -1,4 +1,4 @@
-import { COLORS } from 'constants/theme'
+import { COLORS, LANDSCAPE } from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
@@ -14,6 +14,17 @@ const NavList = styled.ul`
   align-items: center;
   height: 100px;
   transform: rotate(-90deg);
+
+  ${LANDSCAPE.MOBILE} {
+    transform: rotate(0deg);
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 50px 30px 0;
+  }
 
   ${mobile`
     transform: rotate(0deg);
@@ -46,6 +57,13 @@ const NavItem = styled.li<{ active?: boolean }>`
     border: none;
   }
 
+  ${LANDSCAPE.MOBILE} {
+    border-right: none;
+    padding: 15px 0;
+    width: 100%;
+    text-align: right;
+  }
+
   ${mobile`
     border-right: none;
     padding: 15px 0;  
@@ -57,12 +75,16 @@ const NavItem = styled.li<{ active?: boolean }>`
 const MobileContacts = styled(Contacts)`
   display: none;
   position: absolute;
+  bottom: 15%;
+  right: 30px;
+
+  ${LANDSCAPE.MOBILE} {
+    display: flex;
+    bottom: 10px;
+  }
 
   ${mobile`
     display: flex;
-    position: absolute;
-    bottom: 15%;
-    right: 30px;
   `}
 `
 
@@ -71,13 +93,17 @@ export const Nav = () => {
 
   return (
     <NavList>
-      <NavItem active={route === '/contact'}>Contact</NavItem>
+      <NavItem active={route === '/contact'}>
+        <a href="/contact">Contact</a>
+      </NavItem>
       <NavItem active={route === '/team'}>
         <Link href="/team">
           <a>Team</a>
         </Link>
       </NavItem>
-      <NavItem active={route === '/technologies'}>Technologies</NavItem>
+      <NavItem active={route === '/technologies'}>
+        <a href="/technologies">Technologies</a>
+      </NavItem>
       <MobileContacts />
     </NavList>
   )

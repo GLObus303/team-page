@@ -1,12 +1,13 @@
-import { TRANSITION, COLORS } from 'constants/theme'
+import { TRANSITION, COLORS, LANDSCAPE } from 'constants/theme'
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { HoverButton } from 'components/HoverButton'
 import { mobile } from 'utils/CssUtils'
 import { Nav } from 'components/Menu/Nav'
+import { HoverButton } from 'components/HoverButton'
 
 import { BurgerMenu } from './BurgerMenu'
+import { StyledLogo } from './Menu'
 
 const Container = styled.div`
   display: none;
@@ -17,6 +18,10 @@ const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
+  ${LANDSCAPE.MOBILE} {
+    display: flex;
+  }
 
   ${mobile`
     display: flex;
@@ -33,6 +38,10 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   box-shadow: 0 0 10px ${COLORS.GREY};
   background-color: ${COLORS.WHITE};
   transition: transform 0.5s ${TRANSITION.CUBIC};
+
+  ${LANDSCAPE.MOBILE} {
+    width: 40vw;
+  }
 `
 
 export const MobileHeader = () => {
@@ -42,7 +51,7 @@ export const MobileHeader = () => {
 
   return (
     <Container>
-      <HoverButton icon="light-bulb" />
+      <HoverButton icon={<StyledLogo width="30px" />} link="/" />
       <BurgerMenu isOpen={isOpen} onClick={handleOpenChange} />
       <MobileMenu isOpen={isOpen}>
         <Nav />

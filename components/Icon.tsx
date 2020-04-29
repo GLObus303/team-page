@@ -2,38 +2,29 @@ import { COLORS, Z_INDEX } from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
-import Mail from 'public/icons/mail.svg'
-import Phone from 'public/icons/phone.svg'
-import Arrow from 'public/icons/arrow.svg'
-import LightBulb from 'public/icons/light-bulb.svg'
 
-const StyledSVG = styled.span<{ width?: string; color?: string }>`
-  display: inline-flex;
-  max-width: 100%;
-  max-height: 100%;
+const StyledSvg = styled.svg`
+  fill: ${({ color }) => color ?? COLORS.WHITE};
+  min-height: ${({ width }) => width ?? '18px'};
+  min-width: ${({ height }) => height ?? '18px'};
   z-index: ${Z_INDEX.FRONT};
-
-  svg {
-    width: ${({ width }) => width || 18}px;
-    fill: ${({ color }) => color || COLORS.WHITE};
-  }
 `
 
-interface IconProps {
-  type: string
-  width?: string
-  color?: string
-}
-
-const Icons: { [key: string]: React.ReactNode } = {
-  mail: <Mail />,
-  phone: <Phone />,
-  'light-bulb': <LightBulb />,
-  arrow: <Arrow />,
-}
-
-export const Icon: React.FC<IconProps> = ({ type, width, color }) => (
-  <StyledSVG width={width} color={color}>
-    {Icons[type]}
-  </StyledSVG>
+export const Icon = ({
+  width,
+  height,
+  color,
+  className,
+  children,
+  ...props
+}) => (
+  <StyledSvg
+    height={height}
+    width={width}
+    preserveAspectRatio="xMidYMid meet"
+    className={className}
+    {...props}
+  >
+    {children}
+  </StyledSvg>
 )

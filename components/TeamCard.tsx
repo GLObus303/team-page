@@ -1,9 +1,10 @@
-import { FONT_SIZE } from 'constants/theme'
-import { Hexagon } from 'constants/hexagon'
+import { LANDSCAPE } from 'constants/theme'
+import { Hexagon } from 'constants/hexagonShape'
 
 import React from 'react'
 import styled from 'styled-components'
 import { Heading } from 'components/Heading'
+import { SubHeading } from 'components/SubHeading'
 import { Text } from 'components/Text'
 import { Techs } from 'components/Techs'
 import { tablet, mobile, smallMobile, laptop } from 'utils/CssUtils'
@@ -20,6 +21,13 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: flex-start;
   `}
+
+  ${LANDSCAPE.MOBILE} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 20px 0;
+  }
 
   ${mobile`
     padding: 0 20px 100px;
@@ -40,14 +48,23 @@ const Info = styled.div`
     margin-top: 30px;
   `}
 
+  ${LANDSCAPE.MOBILE} {
+    max-width: 50%;
+    margin-right: unset;
+  }
+
+  ${mobile`
+    margin-top: 10px;
+  `}
+
   ${smallMobile`
     margin-top: 80px;
   `}
 `
 
 const Picture = styled.div<{ background: string }>`
-  width: 530px;
-  height: 475px;
+  width: 50%;
+  padding-top: 55%;
   clip-path: ${Hexagon};
   background-image: ${({ background }) => `url(${background})`};
   background-size: cover;
@@ -61,29 +78,27 @@ const Picture = styled.div<{ background: string }>`
 
   ${tablet`
     order: -1;
-    width: 150px;
-    height: 150px;
+    width: 70%;
+    padding-top: 65%;
     margin-top: 50px;
   `}
 
+  ${LANDSCAPE.MOBILE} {
+    width: 50%;
+    padding-top: 50%;
+    order: 0;
+    width: 60%;
+    margin-top: 0;
+  }
+
   ${mobile`
-    width: 150px;
-    height: 150px;
+    width: 50%;
+    padding-top: 50%;
     margin-top: 60px;
   `}
 
   ${smallMobile`
     display: none;
-  `} 
-`
-
-const SubHeading = styled.h2`
-  font-size: 4rem;
-  line-height: 5rem;
-
-  ${mobile`
-    font-size: 2.4rem;
-    line-height: 3rem;
   `}
 `
 
@@ -97,7 +112,12 @@ const SocialLink = styled.img`
 
   ${tablet`
     margin-left: 20px;
+    max-width: 40px;
   `}
+
+  ${LANDSCAPE.MOBILE} {
+    max-width: 30px;
+  }
 
   ${mobile`
     max-width: 30px;
@@ -114,24 +134,40 @@ const Wrapper = styled.div`
   `}
 `
 
-const CustomText = styled(Text)`
-  ${laptop`
-    font-size: ${FONT_SIZE.MEDIUM};
-    line-height: 2rem;
+const StyledTechs = styled(Techs)`
+  ${tablet`
+    position: absolute;
+    top: 0;
+    right: -25%;
+    flex-direction: column;
   `}
+
+  ${LANDSCAPE.MOBILE} {
+    flex-direction: row;
+    position: static;
+  }
 
   ${mobile`
-      font-size: 1.2rem;
-      line-height: 1.4rem;
+    right: -30%;
   `}
+
+  img {
+    ${tablet`
+    margin-bottom: 20px;
+  `}
+  }
 `
 
+export interface TechsInterface {
+  name: string
+  logo: string
+}
 export interface TeamCardProps {
   firstName: string
   lastName: string
   position: string
   description: string
-  techs: string[]
+  techs: TechsInterface[]
   image: string
   linkedIn: string
 }
@@ -160,10 +196,10 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           {lastName}
         </Heading>
         <SubHeading>{position}</SubHeading>
-        <CustomText margin={isMobile ? '0 0 20px 0' : '0 0 50px 0'}>
+        <Text margin={isMobile ? '0 0 20px 0' : '0 0 50px 0'}>
           {description}
-        </CustomText>
-        <Techs techs={techs} />
+        </Text>
+        <StyledTechs techs={techs} />
       </Info>
       <Picture background={image} />
     </Container>

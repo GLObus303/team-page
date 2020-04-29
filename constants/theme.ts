@@ -11,28 +11,41 @@ export const SHADOW = {
 
 export const FONT_SIZE = {
   SMALL: '1.4rem',
-  BASE: '1.5rem',
-  MEDIUM: '1.8rem',
-  LARGE: '2.2rem',
+  BASE: '2rem',
+  MEDIUM: '2.6rem',
+  LARGE: '3.6rem',
+  HEADING: '6rem',
+}
+
+export const LINE_HEIGHT = {
+  SMALL: '1.6rem',
+  BASE: '2.2rem',
+  MEDIUM: '2.8rem',
+  LARGE: '4rem',
   HEADING: '6rem',
 }
 
 export const FONT_WEIGHT = {
   BASE: '400',
-  MEDIUM: '600',
-  BOLD: '900',
+  BOLD: '700',
 }
 
 export const BREAKPOINT: { [key: string]: number } = {
   SMALL_MOBILE: 374,
   MOBILE: 480,
+  MOBILE_LANDSCAPE: 896,
   TABLET: 1024,
   LAPTOP: 1366,
+}
+
+export const LANDSCAPE = {
+  MOBILE: `@media screen and (orientation: landscape) and (max-width: ${BREAKPOINT.MOBILE_LANDSCAPE}px)`,
 }
 
 export const Z_INDEX = {
   FRONT: 1,
   BASE_LEVEL: 0,
+  BEHIND: -1,
 }
 
 export const MAX_CONTENT_WIDTH = '1940px'

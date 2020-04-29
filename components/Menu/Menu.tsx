@@ -1,4 +1,4 @@
-import { COLORS } from 'constants/theme'
+import { COLORS, LANDSCAPE } from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
@@ -6,6 +6,7 @@ import { HoverButton } from 'components/HoverButton'
 import { Nav } from 'components/Menu/Nav'
 import { Contacts } from 'components/Menu/Contacts'
 import { tablet, mobile } from 'utils/CssUtils'
+import { LogoIcon } from 'components/Icons/Logo'
 
 const Container = styled.div`
   position: fixed;
@@ -22,26 +23,29 @@ const Container = styled.div`
 
   ${tablet`
     width: 80px;  
-    `}
+    padding: 15px 30px 30px;
+  `}
+
+  ${LANDSCAPE.MOBILE} {
+    display: none;
+  }
 
   ${mobile`
-    top: 100%;
-    transform: translateY(-100%);
-    width: 100%;  
-    height: 60px;
     display: none;
-    `}
+  `}
 `
 
-const StyledHoverButton = styled(HoverButton)`
-  ${mobile`
-      display: none;
-    `}
+export const StyledLogo = styled(LogoIcon)`
+  transform: rotate(30deg);
 `
 
 export const Menu = () => (
   <Container>
-    <StyledHoverButton icon="light-bulb" link="/" content="Dream Team" />
+    <HoverButton
+      icon={<StyledLogo width="30px" />}
+      link="/"
+      content="Dream Team"
+    />
     <Nav />
     <Contacts />
   </Container>

@@ -13,12 +13,12 @@ export const GlobalStyles = createGlobalStyle`
  @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
   font-display: swap;
-  src: local('Roboto Black'), local('Roboto-Black'), url('/fonts/roboto_black.woff2') format('woff2');
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
- 
+ }
+
   * {
     margin: 0;
     padding: 0;

@@ -1,5 +1,5 @@
-import { Z_INDEX, COLORS } from 'constants/theme'
-import { Hexagon } from 'constants/hexagon'
+import { Z_INDEX, COLORS, LANDSCAPE, BREAKPOINT } from 'constants/theme'
+import { Hexagon } from 'constants/hexagonShape'
 import { TEAM } from 'constants/teamData'
 
 import React, { useRef } from 'react'
@@ -9,6 +9,7 @@ import { TeamCard } from 'components/TeamCard'
 import { Layout } from 'components/Layout'
 import { HoverButton } from 'components/HoverButton'
 import { mobile, tablet, smallMobile, laptop } from 'utils/CssUtils'
+import { ArrowIcon } from 'components/Icons/Arrow'
 
 const Container = styled.div`
   margin-left: 130px;
@@ -16,11 +17,16 @@ const Container = styled.div`
   position: relative;
 
   ${tablet`
-      margin-left: 80px;
+    margin-left: 80px;
   `}
 
+  ${LANDSCAPE.MOBILE} {
+    margin-left: 0;
+    position: unset;
+  }
+
   ${mobile`
-      margin-left: 0;
+    margin-left: 0;
   `}
 `
 
@@ -41,10 +47,12 @@ const ButtonContainer = styled.div`
 
 const HoverButtonLeft = styled(HoverButton)`
   transform: rotate(180deg);
-  padding-top: 20px;
+  padding-top: 13px;
 `
 
 const CustomSlider = styled(Slider)`
+  z-index: ${Z_INDEX.BEHIND};
+
   .slick-track {
     display: flex;
   }
@@ -65,8 +73,19 @@ const CustomSlider = styled(Slider)`
       bottom: 40px;
     `}
 
+    @media screen and (orientation: landscape) and (max-width: ${
+      BREAKPOINT.LAPTOP
+    }px) {
+      bottom: 40px;
+    }
+
+    ${LANDSCAPE.MOBILE} {
+      bottom: 10px;
+      position: fixed;
+    }
+
     ${mobile`
-      bottom: 15%;
+      bottom: 14%;
     `}
 
     ${smallMobile`
@@ -98,6 +117,11 @@ const CustomSlider = styled(Slider)`
         z-index: ${Z_INDEX.BASE_LEVEL};
         clip-path: ${Hexagon};
 
+        ${LANDSCAPE.MOBILE} {
+          width: 54px;
+          height: 54px;
+        }
+
         ${mobile`
           width: 54px;
           height: 54px;
@@ -117,6 +141,11 @@ const CustomDot = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
+
+  ${LANDSCAPE.MOBILE} {
+    width: 50px;
+    height: 50px;
+  }
 
   ${mobile`
     width: 50px;
@@ -148,8 +177,8 @@ const Team = () => {
           ))}
         </CustomSlider>
         <ButtonContainer>
-          <HoverButtonLeft icon="arrow" onClick={prevSlide} />
-          <HoverButton icon="arrow" onClick={nextSlide} />
+          <HoverButtonLeft icon={<ArrowIcon />} onClick={prevSlide} />
+          <HoverButton icon={<ArrowIcon />} onClick={nextSlide} />
         </ButtonContainer>
       </Container>
     </Layout>

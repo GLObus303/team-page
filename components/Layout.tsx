@@ -1,10 +1,11 @@
-import { MAX_CONTENT_WIDTH } from 'constants/theme'
+import { MAX_CONTENT_WIDTH, LANDSCAPE } from 'constants/theme'
 
 import React, { FC, ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import { Menu } from 'components/Menu/Menu'
 import { MobileHeader } from 'components/Menu/MobileHeader'
+import { mobile } from 'utils/CssUtils'
 
 const PageWrapper = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ const PageWrapper = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   position: relative;
+
+  ${mobile`
+    overflow-y: visible;
+  `}
 `
 
 const ContentWrapper = styled.div`
@@ -25,6 +30,14 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
+  ${LANDSCAPE.MOBILE} {
+    overflow-y: visible;
+  }
+
+  ${mobile`
+    overflow-y: visible;
+  `}
 `
 
 interface LayoutProps {

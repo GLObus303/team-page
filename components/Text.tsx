@@ -1,22 +1,29 @@
-import { COLORS, FONT_SIZE } from 'constants/theme'
+import { COLORS, FONT_SIZE, LINE_HEIGHT, LANDSCAPE } from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
-import { prop, smallMobile } from 'utils/CssUtils'
+import { prop, mobile, tablet } from 'utils/CssUtils'
 
 const StyledText = styled.p`
   color: ${prop('color') || COLORS.BLACK};
-  font-weight: ${({ bold }) => (bold ? '700' : '400')};
   margin: ${({ margin }) => margin ?? 0};
-  text-transform: ${({ uppercase }) => uppercase && 'uppercase'};
-  font-size: ${({ size }) => FONT_SIZE[size] ?? FONT_SIZE.LARGE};
-  text-align: ${prop('align')};
-  line-height: 3rem;
+  font-size: ${FONT_SIZE.BASE};
+  line-height: ${LINE_HEIGHT.MEDIUM};
   margin: ${prop('margin')};
 
-  ${smallMobile`
+  ${tablet`
     font-size: ${FONT_SIZE.BASE};
-    line-height: 1.8rem;
+    line-height: ${LINE_HEIGHT.BASE};
+  `}
+
+  ${LANDSCAPE.MOBILE} {
+    font-size: ${FONT_SIZE.SMALL};
+    line-height: ${LINE_HEIGHT.SMALL};
+  }
+
+  ${mobile`
+    font-size: ${FONT_SIZE.SMALL};
+    line-height: ${LINE_HEIGHT.SMALL};
   `}
 `
 
@@ -25,6 +32,7 @@ interface TextProps {
   size?: string
   color?: string
   children: string
+  className?: string
 }
 
 export const Text: React.FC<TextProps> = ({
@@ -32,8 +40,9 @@ export const Text: React.FC<TextProps> = ({
   margin,
   color,
   size,
+  className,
 }) => (
-  <StyledText margin={margin} color={color} size={size}>
+  <StyledText margin={margin} color={color} size={size} className={className}>
     {children}
   </StyledText>
 )
