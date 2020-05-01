@@ -1,3 +1,5 @@
+import { FONT_SIZE } from 'constants/theme'
+
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
@@ -47,19 +49,19 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3.2rem;
+    font-size: ${FONT_SIZE.LARGE};
     letter-spacing: 1.5px;
     line-height: 3.9rem;
     text-align: center;
   }
 
   h2 {
-    font-size: 2.4rem; 
+    font-size: ${FONT_SIZE.MEDIUM}; 
     line-height: 2.9rem;
   }
 
   p {
-    line-height: 2.1rem;
+    line-height: ${FONT_SIZE.BASE};
     letter-spacing: 0.5px;
   }
 `

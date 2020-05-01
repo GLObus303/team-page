@@ -1,3 +1,5 @@
+import { FONT_SIZE } from 'constants/theme'
+
 import React from 'react'
 import styled from 'styled-components'
 
@@ -16,11 +18,11 @@ const Box = styled.div`
   flex-direction: column;
   padding: 20px;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: ${FONT_SIZE.SMALL};
 `
 
 const Heading = styled.div`
-  font-size: 1.5rem;
+  font-size: ${FONT_SIZE.SMALL};
   font-weight: black;
 `
 

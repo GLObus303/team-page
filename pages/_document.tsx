@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
             content="initial-scale=1.0, width=device-width"
           />
           <meta name="Description" content="Digital Onboarding Demo" />
-          <link rel="icon" type="image/png" href="/images/favicon.png" />
+          <link rel="icon" type="image/png" href="/images/penne.png" />
           <meta charSet="utf-8" />
         </Head>
         <body>

@@ -3,10 +3,17 @@ export const COLORS = {
   GREY: '#777272',
   WHITE: '#fff',
   LIGHT_BLUE: '#EAF3FC',
+  GREEN: 'rgb(0, 190, 164)',
+  BLUE: '#4f8cd2',
+  ALERT: '#f00',
 }
 
 export const SHADOW = {
   MAIN: 'box-shadow: 0 5px 25px 0 rgba(0,0,0,0.15)',
+}
+
+export const BORDER_RADIUS = {
+  MAIN: '6px',
 }
 
 export const FONT_SIZE = {

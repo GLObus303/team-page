@@ -1,16 +1,24 @@
-import { COLORS, LANDSCAPE, FONT_SIZE, LINE_HEIGHT } from 'constants/theme'
+import {
+  COLORS,
+  LANDSCAPE,
+  FONT_SIZE,
+  LINE_HEIGHT,
+  BORDER_RADIUS,
+} from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledButton = styled.button<{
+interface ButtonProps {
   isInverted?: boolean
   centered?: boolean
-}>`
+}
+
+const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
   background: ${({ isInverted }) => (isInverted ? COLORS.WHITE : COLORS.BLACK)};
   border: ${COLORS.BLACK} solid 2px;
-  border-radius: 6px;
+  border-radius: ${BORDER_RADIUS.MAIN};
   color: ${({ isInverted }) => (isInverted ? COLORS.BLACK : COLORS.WHITE)};
   cursor: pointer;
   font-size: ${FONT_SIZE.BASE};

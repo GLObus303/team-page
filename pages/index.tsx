@@ -9,6 +9,10 @@ import { Button } from 'components/Button'
 import { Text } from 'components/Text'
 import { tablet, mobile } from 'utils/CssUtils'
 
+const StyledLayout = styled(Layout)`
+  overflow: visible;
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -72,7 +76,7 @@ const Image = styled.div`
 `
 
 const Home = () => (
-  <Layout>
+  <StyledLayout>
     <Image />
     <Container>
       <Heading>Hire us you dumb abc cunts</Heading>
@@ -82,7 +86,7 @@ const Home = () => (
       </Text>
       <Button>Hire us</Button>
     </Container>
-  </Layout>
+  </StyledLayout>
 )
 
 export default Home

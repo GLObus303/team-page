@@ -36,10 +36,10 @@ interface TextProps {
 }
 
 export const Text: React.FC<TextProps> = ({
-  children,
   margin,
-  color,
   size,
+  color,
+  children,
   className,
 }) => (
   <StyledText margin={margin} color={color} size={size} className={className}>

@@ -1,4 +1,4 @@
-import { COLORS, LANDSCAPE } from 'constants/theme'
+import { COLORS, LANDSCAPE, FONT_SIZE } from 'constants/theme'
 
 import React from 'react'
 import styled from 'styled-components'
@@ -42,12 +42,11 @@ const NavItem = styled.li<{ active?: boolean }>`
   list-style: none;
   padding: 0 15px;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: ${FONT_SIZE.SMALL};
   border-right: 1px solid ${COLORS.GREY};
   color: ${({ active }) => (active ? COLORS.BLACK : COLORS.GREY)};
   cursor: pointer;
   transition: color 0.2s linear;
-  font-weight: 500;
 
   :hover {
     color: ${COLORS.BLACK};

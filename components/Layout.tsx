@@ -44,12 +44,14 @@ interface LayoutProps {
   children: ReactNode
   metaTitle?: string
   metaDescription?: string
+  className?: string
 }
 
 export const Layout: FC<LayoutProps> = ({
   children,
   metaTitle = 'TeamPage',
   metaDescription = 'Awesome Team',
+  className,
 }) => (
   <>
     <Head>
@@ -58,7 +60,7 @@ export const Layout: FC<LayoutProps> = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <PageWrapper>
-      <ContentWrapper>{children}</ContentWrapper>
+      <ContentWrapper className={className}>{children}</ContentWrapper>
       <MobileHeader />
       <Menu />
     </PageWrapper>
