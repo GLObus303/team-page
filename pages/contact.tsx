@@ -1,4 +1,5 @@
 import { Hexagon } from 'constants/hexagonShape'
+import { FILESTACK_API_KEY } from 'constants/index'
 import { COLORS, BORDER_RADIUS, FONT_SIZE } from 'constants/theme'
 
 import React, { useCallback, useState } from 'react'
@@ -10,8 +11,9 @@ import { Text } from 'components/Text'
 import { Button } from 'components/Button'
 import { NextPage } from 'next'
 import { Dropzone } from 'components/Dropzone'
-import { getBase64 } from 'utils/getBase64'
 import { FormResponseApi } from 'services/FormResponseApi'
+import { Client } from 'filestack-js'
+import { Spinner } from 'components/Icons/Spinner'
 
 const StyledLayout = styled(Layout)`
   overflow: visible;
@@ -180,6 +182,20 @@ const FooterSection = styled.div`
   `}
 `
 
+const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  min-width: 150px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 2px dashed ${COLORS.BLACK};
+  background: ${COLORS.WHITE};
+  border-radius: ${BORDER_RADIUS.MAIN};
+`
+
 const StyledButton = styled(Button)<{ isReponseSent: boolean }>`
   min-width: 150px;
   height: 40px;
@@ -194,6 +210,7 @@ const StyledButton = styled(Button)<{ isReponseSent: boolean }>`
 const Contact: NextPage = () => {
   const [fileToUpload, setFileToUpload] = useState<any>({})
   const [isReponseSent, setIsResponseSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles?.length > 0) {
@@ -203,27 +220,35 @@ const Contact: NextPage = () => {
 
   const onSubmit = async (event: any) => {
     event.preventDefault()
+    setIsSubmitting(true)
 
     const name = event.target.name?.value
     const company = event.target.company?.value
     const message = event.target.message?.value
 
-    const base64 = await getBase64(fileToUpload)
+    let file = ''
 
-    const formData = new FormData()
+    try {
+      if (fileToUpload?.path != null) {
+        const clientResponse = await new Client(FILESTACK_API_KEY).upload(
+          fileToUpload
+        )
 
-    formData.append('data', JSON.stringify({ name, company, message }))
-    formData.append(
-      'files.file',
-      new Blob([base64], {
-        type: fileToUpload.type,
-      }),
-      fileToUpload.name
-    )
+        file = clientResponse?.url
+      }
+    } catch (error) {
+      file = error?.toString()
+    }
 
-    FormResponseApi.sendFormResponse(formData)
+    FormResponseApi.sendFormResponse({
+      name,
+      company,
+      message,
+      file,
+    })
 
     setIsResponseSent(true)
+    setIsSubmitting(false)
   }
 
   return (
@@ -251,9 +276,15 @@ const Contact: NextPage = () => {
             />
             <FooterSection>
               <Dropzone onDrop={onDrop} />
-              <StyledButton type="submit" isReponseSent={isReponseSent}>
-                {isReponseSent ? '✔️' : 'Send'}
-              </StyledButton>
+              {isSubmitting ? (
+                <SpinnerContainer>
+                  <Spinner />
+                </SpinnerContainer>
+              ) : (
+                <StyledButton type="submit" isReponseSent={isReponseSent}>
+                  {isReponseSent ? '✔️' : 'Send'}
+                </StyledButton>
+              )}
             </FooterSection>
           </FormContainer>
         </HexagonBottomSection>
