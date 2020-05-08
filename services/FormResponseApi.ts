@@ -1,5 +1,3 @@
-import { BASE_API_URL } from 'constants/index'
-
 import Axios, { AxiosRequestConfig, AxiosPromise } from 'axios'
 import { FormResponse } from 'model/FormResponse'
 
@@ -11,7 +9,7 @@ export class FormResponseApi {
     return Axios({
       ...config,
       method: 'POST',
-      url: `${BASE_API_URL}/form-responses`,
+      url: `${process.env.BASE_API_URL}/form-responses`,
       data: body,
     })
   }

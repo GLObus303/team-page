@@ -1,5 +1,4 @@
 import { Hexagon } from 'constants/hexagonShape'
-import { FILESTACK_API_KEY } from 'constants/index'
 import { COLORS, BORDER_RADIUS, FONT_SIZE } from 'constants/theme'
 
 import React, { useCallback, useState } from 'react'
@@ -14,6 +13,7 @@ import { Dropzone } from 'components/Dropzone'
 import { FormResponseApi } from 'services/FormResponseApi'
 import { Client } from 'filestack-js'
 import { Spinner } from 'components/Icons/Spinner'
+import { Check } from 'components/Icons/Check'
 
 const StyledLayout = styled(Layout)`
   overflow: visible;
@@ -152,6 +152,31 @@ const FormContainer = styled.form`
   `}
 `
 
+const SuccessContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`
+
+const SuccessMark = styled.div`
+  width: 150px;
+  height: 150px;
+  padding: 40px;
+  background-color: ${COLORS.GREEN};
+  clip-path: ${Hexagon};
+`
+
+const SuccessText = styled.div`
+  color: ${COLORS.BLACK};
+  font-size: ${FONT_SIZE.MEDIUM};
+  width: 100%;
+  margin-top: 20px;
+`
+
 const inputSharedCss = css`
   width: 100%;
   border-radius: ${BORDER_RADIUS.MAIN};
@@ -230,9 +255,9 @@ const Contact: NextPage = () => {
 
     try {
       if (fileToUpload?.path != null) {
-        const clientResponse = await new Client(FILESTACK_API_KEY).upload(
-          fileToUpload
-        )
+        const clientResponse = await new Client(
+          process.env.FILESTACK_API_KEY
+        ).upload(fileToUpload)
 
         file = clientResponse?.url
       }
@@ -267,25 +292,36 @@ const Contact: NextPage = () => {
         </HexagonTopSection>
         <HexagonBottomSection>
           <FormContainer onSubmit={onSubmit}>
-            <StyledInput placeholder="Name" name="name" required />
-            <StyledInput placeholder="Company name" name="company" />
-            <StyledTextInput
-              placeholder="Purpose / Message"
-              name="message"
-              required
-            />
-            <FooterSection>
-              <Dropzone onDrop={onDrop} />
-              {isSubmitting ? (
-                <SpinnerContainer>
-                  <Spinner />
-                </SpinnerContainer>
-              ) : (
-                <StyledButton type="submit" isReponseSent={isReponseSent}>
-                  {isReponseSent ? '✔️' : 'Send'}
-                </StyledButton>
-              )}
-            </FooterSection>
+            {isReponseSent ? (
+              <SuccessContainer>
+                <SuccessMark>
+                  <Check />
+                </SuccessMark>
+                <SuccessText>Successfully sent! Thank you!</SuccessText>
+              </SuccessContainer>
+            ) : (
+              <>
+                <StyledInput placeholder="Name" name="name" required />
+                <StyledInput placeholder="Company name" name="company" />
+                <StyledTextInput
+                  placeholder="Purpose / Message"
+                  name="message"
+                  required
+                />
+                <FooterSection>
+                  <Dropzone onDrop={onDrop} />
+                  {isSubmitting ? (
+                    <SpinnerContainer>
+                      <Spinner />
+                    </SpinnerContainer>
+                  ) : (
+                    <StyledButton type="submit" isReponseSent={isReponseSent}>
+                      Send
+                    </StyledButton>
+                  )}
+                </FooterSection>
+              </>
+            )}
           </FormContainer>
         </HexagonBottomSection>
       </Container>

@@ -55,14 +55,14 @@ const StyledText = styled.div`
 
 const getDragMessage = (isDragActive: boolean, acceptedFileName: string) => {
   if (isDragActive) {
-    return 'Drop files'
+    return 'Drop file'
   }
 
   if (acceptedFileName) {
     return acceptedFileName
   }
 
-  return 'Attach files'
+  return 'Attach file'
 }
 
 interface DropzoneProps {

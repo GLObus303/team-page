@@ -19,15 +19,21 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins(
-  [
+module.exports = {
+  ...withPlugins(
     [
-      optimizedImages,
-      {
-        optimizeImagesInDev: false,
-        handleImages: ['jpeg', 'png'],
-      },
+      [
+        optimizedImages,
+        {
+          optimizeImagesInDev: false,
+          handleImages: ['jpeg', 'png'],
+        },
+      ],
     ],
-  ],
-  nextConfig
-)
+    nextConfig
+  ),
+  env: {
+    BASE_API_URL: process.env.BASE_API_URL,
+    FILESTACK_API_KEY: process.env.FILESTACK_API_KEY,
+  },
+}
