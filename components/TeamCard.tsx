@@ -16,8 +16,10 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 100px 100px;
+  overflow: scroll;
 
   ${tablet`
+    padding: 0 20px 150px;
     flex-direction: column;
     justify-content: flex-start;
   `}
@@ -63,13 +65,14 @@ const Info = styled.div`
 `
 
 const Picture = styled.div<{ background: string }>`
-  width: 50%;
-  padding-top: 55%;
+  width: 45%;
+  padding-top: 40%;
   clip-path: ${Hexagon};
   background-image: ${({ background }) => `url(${background})`};
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position-x: center;
+  background-position-y: top;
 
   ${laptop`
     width: 350px;

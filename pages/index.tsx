@@ -8,6 +8,7 @@ import { Heading } from 'components/Heading'
 import { Button } from 'components/Button'
 import { Text } from 'components/Text'
 import { tablet, mobile } from 'utils/CssUtils'
+import Link from 'next/link'
 
 const StyledLayout = styled(Layout)`
   overflow: visible;
@@ -22,7 +23,7 @@ const Container = styled.div`
 
   ${tablet`
     max-width:100%;
-    padding: 0 80px 0 15%;
+    padding: 0 80px 0 20%;
   `}
 
   ${LANDSCAPE.MOBILE} {
@@ -79,12 +80,14 @@ const Home = () => (
   <StyledLayout>
     <Image />
     <Container>
-      <Heading>Hire us you dumb abc cunts</Heading>
+      <Heading>Where ideas meet passion</Heading>
       <Text margin="0 0 24px 0">
-        You pay us good.. 6k per mday and tragic 3k for Nick cos he is a cheap
-        ass fuck
+        We build things, we break things, we learn. We make your vision
+        possible.
       </Text>
-      <Button>Hire us</Button>
+      <Link href="/team">
+        <Button>Meet the team</Button>
+      </Link>
     </Container>
   </StyledLayout>
 )

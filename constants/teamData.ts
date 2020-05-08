@@ -2,11 +2,11 @@ import { TeamCardProps } from 'components/TeamCard'
 
 export const TEAM: TeamCardProps[] = [
   {
-    firstName: 'Saywhat',
-    lastName: 'Motherfucker',
-    position: 'Sucker',
+    firstName: 'Lukas',
+    lastName: 'Cizek',
+    position: 'React developer',
     description:
-      'He speaks what. “Ezekiel 25:17. "The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness.',
+      "Over 5 years of development expertise in many technologies such as React, Java or Android, and iOS. Lukas is now specialized in frontend development in modern technologies or as a teacher on React academies. Experience in coordinating teams as tech and team leader. Focused on delivering results that follow all today's standards.",
     techs: [
       {
         name: 'react',
@@ -21,27 +21,27 @@ export const TEAM: TeamCardProps[] = [
         logo: 'images/jest.svg',
       },
       {
-        name: 'docker',
-        logo: 'images/docker.svg',
-      },
-      {
         name: 'cypress',
         logo: 'images/cypress.svg',
       },
       {
-        name: 'vue',
-        logo: 'images/vue.svg',
+        name: 'aws',
+        logo: 'images/aws.png',
+      },
+      {
+        name: 'node',
+        logo: 'images/node.png',
       },
     ],
-    image: 'images/person.jpg',
-    linkedIn: '/',
+    image: 'images/lukas.png',
+    linkedIn: 'https://www.linkedin.com/in/lukascizek/',
   },
   {
-    firstName: 'Saywhat',
-    lastName: 'Motherfucker',
-    position: 'Sucker',
+    firstName: 'Nikolaj',
+    lastName: 'Stepanov',
+    position: 'React architect',
     description:
-      'He speaks what. “Ezekiel 25:17. "The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness.',
+      'Nik is developer wildcard capable of delivering flawless spot-on designs while having experiences in DevOps and Docker orchestration. His 5 years of development experiences has been mainly in huge e-commerce solutions for remote clients.',
     techs: [
       {
         name: 'react',
@@ -52,58 +52,62 @@ export const TEAM: TeamCardProps[] = [
         logo: 'images/redux.svg',
       },
       {
-        name: 'jest',
-        logo: 'images/jest.svg',
-      },
-      {
         name: 'docker',
         logo: 'images/docker.svg',
-      },
-      {
-        name: 'cypress',
-        logo: 'images/cypress.svg',
       },
       {
         name: 'vue',
         logo: 'images/vue.svg',
       },
+      {
+        name: 'affinity_designer',
+        logo: 'images/affinity_designer.png',
+      },
+      {
+        name: 'affinity_photo',
+        logo: 'images/affinity_photo.png',
+      },
+      {
+        name: 'figma',
+        logo: 'images/figma.png',
+      },
+      {
+        name: 'node',
+        logo: 'images/node.png',
+      },
     ],
-    image: 'images/person.jpg',
-    linkedIn: '/',
+    image: 'images/nik.png',
+    linkedIn: 'www.linkedin.com/in/nik-stepanov',
   },
   {
-    firstName: 'Saywhat',
-    lastName: 'Motherfucker',
-    position: 'Sucker',
+    firstName: 'Jan',
+    lastName: 'Konigsmark',
+    position: 'Senior QA engineer',
     description:
-      'He speaks what. “Ezekiel 25:17. "The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness.',
+      '3 years of experience with manual and automatization testing used from startups to enterprises. Knowledge of C# for modern SoapUI or JavaScript used in end-to-end testing framework Cypress. Jan has been testing competence leader and mentor for other colleagues.',
     techs: [
+      {
+        name: 'selenium',
+        logo: 'images/selenium.png',
+      },
+      {
+        name: 'cypress',
+        logo: 'images/cypres.png',
+      },
+      {
+        name: 'sentry',
+        logo: 'images/sentry.png',
+      },
+      {
+        name: 'winston',
+        logo: 'images/winston.png',
+      },
       {
         name: 'react',
         logo: 'images/react.svg',
       },
-      {
-        name: 'redux',
-        logo: 'images/redux.svg',
-      },
-      {
-        name: 'jest',
-        logo: 'images/jest.svg',
-      },
-      {
-        name: 'docker',
-        logo: 'images/docker.svg',
-      },
-      {
-        name: 'cypress',
-        logo: 'images/cypress.svg',
-      },
-      {
-        name: 'vue',
-        logo: 'images/vue.svg',
-      },
     ],
-    image: 'images/person.jpg',
-    linkedIn: '/',
+    image: 'images/honza.png',
+    linkedIn: 'www.linkedin.com/in/jan-königsmark',
   },
 ]

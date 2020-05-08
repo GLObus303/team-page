@@ -16,12 +16,11 @@ const StyledHeading = styled.h1`
   font-size: ${FONT_SIZE.HEADING};
   line-height: ${LINE_HEIGHT.HEADING};
   text-align: left;
-  margin: 0 0 60px;
+  margin: 0 0 30px;
 
   ${tablet`
     font-size: ${FONT_SIZE.LARGE};
     line-height: ${LINE_HEIGHT.LARGE};
-    margin: 0 0 30px;
   `}
 
   ${LANDSCAPE.MOBILE} {

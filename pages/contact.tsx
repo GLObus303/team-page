@@ -76,7 +76,6 @@ const TextContainer = styled.div`
   margin: 0 auto;
   color: #fff;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   flex-direction: column;
   transform: rotate(9deg);
@@ -282,11 +281,11 @@ const Contact: NextPage = () => {
         <HexagonTopSection>
           <TextContainer>
             <StyledHeading margin="0 0 24px 0">
-              Hire us you dumb abc cunts
+              Just one more step
             </StyledHeading>
             <NoMobileText margin="0 0 24px 0">
-              You pay us good.. 6k per mday and tragic 3k for Nick cos he is a
-              cheap ass fuck
+              No matter if you have an offer, question or just want to say hi.
+              Do not hesitate to contact us.
             </NoMobileText>
           </TextContainer>
         </HexagonTopSection>

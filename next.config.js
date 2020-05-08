@@ -33,7 +33,7 @@ module.exports = {
     nextConfig
   ),
   env: {
-    BASE_API_URL: process.env.BASE_API_URL,
-    FILESTACK_API_KEY: process.env.FILESTACK_API_KEY,
+    BASE_API_URL: process.env.BASE_API_URL || 'http://localhost:1337',
+    FILESTACK_API_KEY: process.env.FILESTACK_API_KEY || '',
   },
 }

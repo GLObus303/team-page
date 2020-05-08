@@ -139,7 +139,8 @@ const CustomDot = styled.div<{ background: string }>`
   background-image: ${({ background }) => `url(${background})`};
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position-x: center;
+  background-position-y: top;
   cursor: pointer;
 
   ${LANDSCAPE.MOBILE} {

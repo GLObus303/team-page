@@ -1,23 +1,10 @@
 export const SUBJECTS = [
   {
-    title: 'Wireframe',
+    title: 'Analysis',
     subTitle: 'Efficiency is the key',
     content:
-      'Wireframing is a way to design a website service at the structural level. A wireframe is commonly used to lay out content and functionality on a page which takes into account user needs and user journeys. Wireframes are used early in the development process to establish the basic structure of a page before visual design and content is added.',
-    techs: [
-      {
-        name: 'Mira',
-        logo: 'images/react.svg',
-      },
-      {
-        name: 'WireframeCC',
-        logo: 'images/redux.svg',
-      },
-      {
-        name: 'Figma',
-        logo: 'images/jest.svg',
-      },
-    ],
+      'Understanding is an essential step for a satisfactory outcome. To bring life to your ideas we will thoroughly analyze your requirements, suggest approaches, and lay down the optimal plan. Simple, yet often forgotten part of a process where simple pen and paper will suffice.',
+    techs: [],
     icon: 'wireframe',
     image: 'wireframe.jpg',
   },
@@ -25,12 +12,12 @@ export const SUBJECTS = [
     title: 'Design',
     subTitle: 'Catch an eye earn a dime',
     content:
-      'An effective website design should fulfill its intended function by conveying its particular message whilst simultaneously engaging the visitor. Several factors such as consistency, colours, typography, imagery, simplicity and functionality all contribute to good website design.',
+      'We will create a website design that will fulfill your intended message whilst simultaneously engaging the visitor. During the whole process quick and consistent feedback is fundamental to assure a clean and transparent process that will not diverge from your original concept. We follow factors that are paramount in modern website design such as consistency, typography, simplicity and impeccable user experience.',
     techs: [
-      { name: 'Figma', logo: 'images/jest.svg' },
-      { name: 'Affinity Designer', logo: 'images/jest.svg' },
-      { name: 'Affinity Photo', logo: 'images/jest.svg' },
-      { name: 'Sketch', logo: 'images/jest.svg' },
+      { name: 'Figma', logo: 'images/figma.png' },
+      { name: 'Affinity Designer', logo: 'images/affinity_designer.png' },
+      { name: 'Affinity Photo', logo: 'images/affinity_photo.png' },
+      { name: 'Sketch', logo: 'images/sketch.png' },
     ],
     icon: 'edit',
     image: 'design.jpg',
@@ -39,12 +26,14 @@ export const SUBJECTS = [
     title: 'Code',
     subTitle: 'Passion drives results',
     content:
-      'There are two things- Programming and Good Programming. Programming is what we have all been doing. Now is the time to do good programming. We all know that even the bad code works. But it takes time and resources to make a program good. Moreover, other developers mock you when they are trying to find what all is happening in your code. But it’s never too late to care for your programs..',
+      'Our small team has experience ranging from small concepts to fully-fledged enterprise solutions. We use field-tested reliable solutions to deliver products to you with unprecedented quality. We leverage the best practices in the field never sacrificing scalability and future maintainability of the code. It is never too late to care for your programs...',
     techs: [
-      { name: 'React', logo: 'images/jest.svg' },
-      { name: 'Vue', logo: 'images/jest.svg' },
-      { name: 'Svelte', logo: 'images/jest.svg' },
-      { name: 'Redux', logo: 'images/jest.svg' },
+      { name: 'React', logo: 'images/react.svg' },
+      { name: 'TypeScript', logo: 'images/typescript.png' },
+      { name: 'Styled-components', logo: 'images/styled.png' },
+      { name: 'Vue', logo: 'images/vue.svg' },
+      { name: 'Redux', logo: 'images/redux.svg' },
+      { name: 'Node', logo: 'images/node.png' },
     ],
     icon: 'web-development',
     image: 'code.jpg',
@@ -53,36 +42,38 @@ export const SUBJECTS = [
     title: 'Test',
     subTitle: 'Better safe than sorry',
     content:
-      'When a website is deployed, anything can happen: broken links, difficult navigation, web security, and many other potential risks. A careful testing process is key to reducing these risks and maintaining web quality.',
+      'Throughout the whole development our quality assurance is not taken lightly. Using regressions tests, modern frameworks. Thanks to automatization our testing is scalable and fast which ensures not only smooth delivery in terms of technical correctness but even from the standpoint of business. Comprehensive test results are communicated back to the client to secure transparent development.',
     techs: [
       { name: 'Jest', logo: 'images/jest.svg' },
-      { name: 'Cypress', logo: 'images/jest.svg' },
+      { name: 'Cypress', logo: 'images/cypress.png' },
+      { name: 'Testing-library', logo: 'images/testing_library.png' },
+      { name: 'Selenium', logo: 'images/selenium.png' },
     ],
     icon: 'exam',
-    image: 'test.jpg',
+    image: 'test_3.jpg',
   },
   {
     title: 'Deploy',
     subTitle: 'Everything falls into place',
     content:
-      'You can whip up a cool web app on your developer machine, but once it’s time to launch it, you feel stuck. There seem to be a lot of different tools out there. You heard that Docker is what people use to deploy stuff - so you started looking into it, but where to start? Does it have to be that hard? Kubernetes seems to be really popular right now, but is it right for you? We know all the answers',
+      'You can whip up a modern web app on your developer machine, but sooner or later it’s time to launch it. Simple yet powerful continuous integration and deployment assure seamless and effortless delivery even in the very early stages of the development. Based on the current use case tools and platforms are orchestrated to yield the best results possible.',
     techs: [
-      { name: 'Docker', logo: 'images/jest.svg' },
-      { name: 'Kubernetes', logo: 'images/jest.svg' },
-      { name: 'AWS', logo: 'images/jest.svg' },
-      { name: 'Azure', logo: 'images/jest.svg' },
+      { name: 'Docker', logo: 'images/docker.png' },
+      { name: 'Kubernetes', logo: 'images/kubernetes.png' },
+      { name: 'AWS', logo: 'images/aws.png' },
+      { name: 'Azure', logo: 'images/azure.png' },
     ],
     icon: 'storage',
-    image: 'cloud.jpg',
+    image: 'cloud_2.jpg',
   },
   {
     title: 'Maintain',
-    subTitle: 'End is not really an end',
+    subTitle: 'The end is just a new beginning',
     content:
-      'The fact that the build of the project is completed doesn’t mean the work stops completely. Web application maintenance is as important as the maintenance you perform on your car – you do it to ensure safety and smooth operation. Neglect it and post-incident fixes may actually cost more than a well-executed service plan. What’s important is to plan for this work up front so that you’re not surprised later on.',
+      'The fact that the build of the project is completed doesn’t mean the work stops completely. We take web application maintenance as a crucial part of the process which must not be forgotten. Neglect it and post-incident fixes may actually cost more than a well-executed service plan. What’s important is to plan for this work up front so that you’re not surprised later on.',
     techs: [
-      { name: 'Winston', logo: 'images/jest.svg' },
-      { name: 'Sentry', logo: 'images/jest.svg' },
+      { name: 'Winston', logo: 'images/winston.png' },
+      { name: 'Sentry', logo: 'images/sentry.png' },
     ],
     icon: 'spanner',
     image: 'maintain.jpg',
