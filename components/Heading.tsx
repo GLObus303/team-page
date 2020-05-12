@@ -16,7 +16,7 @@ const StyledHeading = styled.h1`
   font-size: ${FONT_SIZE.HEADING};
   line-height: ${LINE_HEIGHT.HEADING};
   text-align: left;
-  margin: 0 0 30px;
+  margin: ${prop('margin') || '0 0 30px'};
 
   ${tablet`
     font-size: ${FONT_SIZE.LARGE};
@@ -31,7 +31,6 @@ const StyledHeading = styled.h1`
   ${mobile`
     font-size: ${FONT_SIZE.LARGE};
     line-height: ${LINE_HEIGHT.LARGE};
-    margin: 0 0 20px;
   `}
 
   ${smallMobile`

@@ -24,7 +24,7 @@ const Logo = styled.img<{ isVertical?: boolean }>`
   }
 
   ${mobile`
-    max-height: 40px;
+    max-height: 30px;
     margin-right: 5px;
   `}
 `

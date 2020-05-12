@@ -1,8 +1,13 @@
 import React from 'react'
 import { Icon } from 'components/Icon'
+import styled from 'styled-components'
+
+const StyledIcon = styled(Icon)`
+  height: 18px;
+`
 
 export const MailIcon = (props) => (
-  <Icon viewBox="0 0 512 512" {...props}>
+  <StyledIcon viewBox="0 0 512 512" {...props}>
     <g>
       <path
         d="M10.688,95.156C80.958,154.667,204.26,259.365,240.5,292.01c4.865,4.406,10.083,6.646,15.5,6.646
@@ -16,5 +21,5 @@ export const MailIcon = (props) => (
 				v-268.25C512,132.927,509.583,129.146,505.813,127.406z"
       />
     </g>
-  </Icon>
+  </StyledIcon>
 )

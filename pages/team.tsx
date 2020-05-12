@@ -8,7 +8,7 @@ import Slider from 'react-slick'
 import { TeamCard } from 'components/TeamCard'
 import { Layout } from 'components/Layout'
 import { HoverButton } from 'components/HoverButton'
-import { mobile, tablet, smallMobile, laptop } from 'utils/CssUtils'
+import { mobile, tablet, laptop, smallMobile } from 'utils/CssUtils'
 import { ArrowIcon } from 'components/Icons/Arrow'
 
 const Container = styled.div`
@@ -91,7 +91,6 @@ const CustomSlider = styled(Slider)`
     ${smallMobile`
       bottom: 50px;
     `}
-
 
     li {
       list-style: none;

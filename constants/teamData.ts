@@ -53,7 +53,7 @@ export const TEAM: TeamCardProps[] = [
       },
       {
         name: 'docker',
-        logo: 'images/docker.svg',
+        logo: 'images/docker.png',
       },
       {
         name: 'vue',
@@ -62,10 +62,6 @@ export const TEAM: TeamCardProps[] = [
       {
         name: 'affinity_designer',
         logo: 'images/affinity_designer.png',
-      },
-      {
-        name: 'affinity_photo',
-        logo: 'images/affinity_photo.png',
       },
       {
         name: 'figma',
@@ -92,7 +88,7 @@ export const TEAM: TeamCardProps[] = [
       },
       {
         name: 'cypress',
-        logo: 'images/cypres.png',
+        logo: 'images/cypress.png',
       },
       {
         name: 'sentry',

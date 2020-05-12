@@ -16,13 +16,12 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 100px 100px;
-  overflow: scroll;
 
   ${tablet`
     padding: 0 20px 150px;
     flex-direction: column;
     justify-content: flex-start;
-  `}
+    `}
 
   ${LANDSCAPE.MOBILE} {
     flex-direction: row;
@@ -30,10 +29,6 @@ const Container = styled.div`
     align-items: flex-start;
     padding: 50px 20px 0;
   }
-
-  ${mobile`
-    padding: 0 20px 100px;
-  `}
 `
 
 const Info = styled.div`
@@ -64,6 +59,24 @@ const Info = styled.div`
   `}
 `
 
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  ${tablet`
+    justify-content: flex-start;
+  `}
+
+  ${LANDSCAPE.MOBILE} {
+    display: none;
+  }
+
+  ${mobile`
+    display: none;
+  `}
+`
+
 const Picture = styled.div<{ background: string }>`
   width: 45%;
   padding-top: 40%;
@@ -88,15 +101,17 @@ const Picture = styled.div<{ background: string }>`
 
   ${LANDSCAPE.MOBILE} {
     width: 50%;
-    padding-top: 50%;
+    height: 250px;
+    padding-top: 45%;
     order: 0;
     width: 60%;
     margin-top: 0;
   }
 
   ${mobile`
-    width: 50%;
-    padding-top: 50%;
+    width: 60%;
+    padding-top: 0;
+    height: 40%;
     margin-top: 60px;
   `}
 
@@ -123,18 +138,35 @@ const SocialLink = styled.img`
   }
 
   ${mobile`
+    margin-left: 10px;
     max-width: 30px;
   `}
 `
 
-const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+const LastNameWrapper = styled.div`
+  ${LANDSCAPE.MOBILE} {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-  ${tablet`
-    justify-content: flex-start;
-  `}
+  ${mobile`
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  `};
+`
+
+const SocialWrapper = styled.a`
+  display: none;
+
+  ${LANDSCAPE.MOBILE} {
+    display: block;
+  }
+
+  ${mobile`
+    display: block;
+  `};
 `
 
 const StyledTechs = styled(Techs)`
@@ -156,7 +188,7 @@ const StyledTechs = styled(Techs)`
 
   img {
     ${tablet`
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   `}
   }
 `
@@ -195,11 +227,19 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             <SocialLink src="icons/linkedin.svg" />
           </a>
         </Wrapper>
-        <Heading margin={isMobile ? '0 0 20px 0' : '0 0 50px 0'}>
-          {lastName}
-        </Heading>
+        <LastNameWrapper>
+          <Heading margin={!isMobile && '0 0 50px 0'}>{lastName}</Heading>
+          <SocialWrapper
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SocialLink src="icons/linkedin.svg" />
+          </SocialWrapper>
+        </LastNameWrapper>
+
         <SubHeading>{position}</SubHeading>
-        <Text margin={isMobile ? '0 0 20px 0' : '0 0 50px 0'}>
+        <Text margin={isMobile ? '5px 0 0 0' : '0 0 50px 0'}>
           {description}
         </Text>
         <StyledTechs techs={techs} />

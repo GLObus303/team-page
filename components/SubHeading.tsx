@@ -38,14 +38,16 @@ interface SubHeadingProps {
   color?: string
   margin?: string
   children: string
+  className?: string
 }
 
 export const SubHeading: React.FC<SubHeadingProps> = ({
   children,
   color,
   margin,
+  className,
 }) => (
-  <Heading color={color} margin={margin}>
+  <Heading color={color} margin={margin} className={className}>
     {children}
   </Heading>
 )

@@ -40,10 +40,10 @@ const NavList = styled.ul`
 
 const NavItem = styled.li<{ active?: boolean }>`
   list-style: none;
+  transform: translateZ(0);
   padding: 0 15px;
   text-transform: uppercase;
   font-size: ${FONT_SIZE.SMALL};
-  border-right: 1px solid ${COLORS.GREY};
   color: ${({ active }) => (active ? COLORS.BLACK : COLORS.GREY)};
   cursor: pointer;
   transition: color 0.2s linear;
@@ -57,17 +57,25 @@ const NavItem = styled.li<{ active?: boolean }>`
   }
 
   ${LANDSCAPE.MOBILE} {
-    border-right: none;
     padding: 15px 0;
     width: 100%;
     text-align: right;
   }
 
   ${mobile`
-    border-right: none;
     padding: 15px 0;  
     width: 100%;
     text-align: right;
+  `}
+`
+
+const Separator = styled.div`
+  width: 2px;
+  height: 16px;
+  background-color: ${COLORS.GREY};
+
+  ${mobile`
+    display: none;
   `}
 `
 
@@ -95,11 +103,13 @@ export const Nav = () => {
       <NavItem active={route === '/contact'}>
         <a href="/contact">Contact</a>
       </NavItem>
+      <Separator />
       <NavItem active={route === '/team'}>
         <Link href="/team">
           <a>Team</a>
         </Link>
       </NavItem>
+      <Separator />
       <NavItem active={route === '/technologies'}>
         <a href="/technologies">Technologies</a>
       </NavItem>

@@ -81,6 +81,7 @@ const Container = styled.a`
   :hover {
     ${Content} {
       transform: translateX(0);
+      -webkit-font-smoothing: subpixel-antialiased;
       transition: transform 0.3s 0.3s ${TRANSITION.CUBIC};
     }
 
