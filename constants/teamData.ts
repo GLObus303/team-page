@@ -73,7 +73,7 @@ export const TEAM: TeamCardProps[] = [
       },
     ],
     image: 'images/nik.png',
-    linkedIn: 'www.linkedin.com/in/nik-stepanov',
+    linkedIn: 'https://www.linkedin.com/in/nik-stepanov/',
   },
   {
     firstName: 'Jan',
@@ -104,6 +104,6 @@ export const TEAM: TeamCardProps[] = [
       },
     ],
     image: 'images/honza.png',
-    linkedIn: 'www.linkedin.com/in/jan-königsmark',
+    linkedIn: 'https://www.linkedin.com/in/jan-königsmark/',
   },
 ]
