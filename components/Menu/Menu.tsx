@@ -44,7 +44,7 @@ export const Menu = () => (
     <HoverButton
       icon={<StyledLogo width="30px" />}
       link="/"
-      content="Dream Team"
+      content="Pasta club"
     />
     <Nav />
     <Contacts />

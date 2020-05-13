@@ -38,12 +38,12 @@ const Wrapper = styled.div`
 export const Contacts: React.FC<{ className?: string }> = ({ className }) => (
   <Container className={className}>
     <Wrapper>
-      <Content>+420 608380706</Content>
-      <HoverButton icon={<PhoneIcon />} content="608380706" />
+      <Content>+420 603160025</Content>
+      <HoverButton icon={<PhoneIcon />} content="603160025" />
     </Wrapper>
     <Wrapper>
-      <Content>nikstepwn@gmail.com</Content>
-      <HoverButton icon={<MailIcon />} content="nikstepwn@gmail.com" />
+      <Content>lukascizek3@gmail.com</Content>
+      <HoverButton icon={<MailIcon />} content="lukascizek3@gmail.com" />
     </Wrapper>
   </Container>
 )
