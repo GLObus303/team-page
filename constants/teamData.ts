@@ -98,6 +98,7 @@ export const TEAM: TeamCardProps[] = [
         name: 'winston',
         logo: 'images/winston.png',
       },
+      { name: 'Enterprise_architect', logo: 'images/enterprise_architect.png' },
       {
         name: 'react',
         logo: 'images/react.svg',

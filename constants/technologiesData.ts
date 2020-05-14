@@ -4,7 +4,9 @@ export const SUBJECTS = [
     subTitle: 'Efficiency is the key',
     content:
       'Understanding is an essential step for a satisfactory outcome. To bring life to your ideas we will thoroughly analyze your requirements, suggest approaches, and lay down the optimal plan. Simple, yet often forgotten part of a process where simple pen and paper will suffice.',
-    techs: [],
+    techs: [
+      { name: 'Enterprise_architect', logo: 'images/enterprise_architect.png' },
+    ],
     icon: 'wireframe',
     image: 'wireframe.jpg',
   },
