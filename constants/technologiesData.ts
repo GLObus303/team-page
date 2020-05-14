@@ -50,7 +50,7 @@ export const SUBJECTS = [
       { name: 'Selenium', logo: 'images/selenium.png' },
     ],
     icon: 'exam',
-    image: 'test_3.jpg',
+    image: 'test.jpg',
   },
   {
     title: 'Deploy',
@@ -64,7 +64,7 @@ export const SUBJECTS = [
       { name: 'Azure', logo: 'images/azure.png' },
     ],
     icon: 'storage',
-    image: 'cloud_2.jpg',
+    image: 'cloud.jpg',
   },
   {
     title: 'Maintain',
